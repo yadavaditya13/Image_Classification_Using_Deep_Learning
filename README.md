@@ -1,4 +1,4 @@
-# Image_Classification_Using_Deep_Learning
+# Image_Classification_With_UI_Using_Deep_Learning
 (Yeh_kiski_tasveer_hai) is what the problem statement stated in codeshastra... I implemented it myself this quarentine... using the similar intel-image-classification dataset provided in the competition.
 
   Dataset : https://www.kaggle.com/puneet6060/intel-image-classification
