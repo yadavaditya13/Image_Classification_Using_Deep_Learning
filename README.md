@@ -1,5 +1,5 @@
 # Image_Classification_Using_Deep_Learning
-(Yeh_kiski_tasveer_hai) is what the problem statement stated in codeshastra... I implemented it myself now... using the similar intel-image-classification dataset provided in the competition.
+(Yeh_kiski_tasveer_hai) is what the problem statement stated in codeshastra... I implemented it myself this quarentine... using the similar intel-image-classification dataset provided in the competition.
 
   Dataset : https://www.kaggle.com/puneet6060/intel-image-classification
 
@@ -16,13 +16,17 @@ Problem statement was as follows :
   =>Extra credit will be given if the entire process is done on the cloud.
   =>Create a platform for training, labeling and deploying and retraining image classification models.
 
-The tasks i accomplished :
-=> Trained the model with successful classification
-=> Created ui using tkinter, pretty basic but it works so its cool
-=> Visualization does takes place after inference and i display the prediction score with label, bored to display other metrics.. its easy if you want to display them .. see the plot.png and plotR.png files you will get other metrics as well
-=> UI allows you to change labels with correct one.. you simply need to enter the correct label when prompted the rest is good
-=> Database part is easy... i used pymongo of python but i had some server issues so i just commented it
-=> The re-training happens as well ... i actually wrote the re-training script again because my initial training script was not included in a function so that i could have called it here in new training script file and re-trained the model... but you can if you are reading this..
-=> The model could be made available by simple setting a button which will swap the previous one with new one... i didn't do it
-=> You can simply use colab by uploading this entire directory to your drive and mounting it to colab.
-=> Achieved what was required. Done
+The Flow of my Project :
+  Initially created a CNN using Keras which will be trained using the datasets... Now I placed it as a package in "my_model" dir.
+  This model is then called in the "model_train_script.ipynb" which gives me my trained model and its label encodings as "jagga.model" and "le.pickle" respectively...
+  I created another package called "model_retrain" which stores the script for retraining my model
+  Further we have the final script that will be run by the user called "image_classifier.py"...
+  This script has basic ui which allows user to select 128 images anonymously from the asked dir of dataset... Further once the run_inference command is activated they will be able to see the results and have three options :
+  1) Continue without interrupting flow by clicking "c" from keyboard.
+  2) Renaming the wrong label by giving keyboard interrupt of "r".
+  3) Exiting from the process by giving interrupt "q".
+  
+  Once inference is accomplished... They will be prompted to retrain the model and then they will be asked to give desired parameters such as learning_rate, batch_size and epoch #...
+  Once submitted... Retraining will begin and after finishing this process the retrained model will replace the existing "jagga.model" so that it can be used for further inference running...
+  Also as asked I am storing the new tested images with their modeified labels in MongoDB using pymongo... And also saving a copy in train dir.
+  Now one big advantage for user i gave is that if he gives a new label which machine has no idea of it will still run perfectly fine during retraining because my script will save it in training datset directory under the given label...So i would say Everything asked for is finally accomplished. And yes this will run on cloud by simply uploading it to colab and just run it.
