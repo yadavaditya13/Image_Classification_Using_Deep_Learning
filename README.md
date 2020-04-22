@@ -30,3 +30,5 @@ The Flow of my Project :
   Once submitted... Retraining will begin and after finishing this process the retrained model will replace the existing "jagga.model" so that it can be used for further inference running...
   Also as asked I am storing the new tested images with their modeified labels in MongoDB using pymongo... And also saving a copy in train dir.
   Now one big advantage for user i gave is that if he gives a new label which machine has no idea of it will still run perfectly fine during retraining because my script will save it in training datset directory under the given label...So i would say Everything asked for is finally accomplished. And yes this will run on cloud by simply uploading it to colab and just run it.
+
+Also we have 3 plot files one of which is my initialy trained model as "plot.png" and "plotX.png". The third one will be of the retrained model and it will keep of updating depending on your re-training aka "plotR.png"!!!.. 
